@@ -1,6 +1,6 @@
 services:
   app:
-    image: antuan555/docker-project:latest
+    image: antuan555/docker-project
     build:
       context: .
       dockerfile: Dockerfile
