@@ -18,8 +18,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-      - name: Build production image
-        run: docker compose -f docker-compose.yml build app
+        name: Build and push image
+        run: |
+          docker compose -f docker-compose.yml build app
+          docker compose -f docker-compose.yml push app
 
       - name: Tag image as latest
         run: docker tag docker-project:latest ${{ secrets.DOCKERHUB_USERNAME }}/docker-project:latest
