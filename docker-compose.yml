@@ -7,4 +7,4 @@ services:
     working_dir: /app
     ports:
       - "8080:8080"
-    command: bash -c "pip install -r requirements.txt && python manage.py runserver 0.0.0.0:8080"
+    command: bash -c "python manage.py runserver 0.0.0.0:8080"
